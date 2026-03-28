@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OnlineLao — Apna Business Online Lao! | Noida NCR</title>
+<meta name="description" content="Noida ki local businesses ke liye professional website banate hain. Restaurant, clinic, coaching, salon — sabka website. Starting ₹2,999.">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Hind:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --saffron:#FF6B00;
+  --saffron2:#FF8C35;
+  --green:#138808;
+  --green2:#1aad0a;
+  --navy:#0D1F3C;
+  --navy2:#162d57;
+  --cream:#FFFAF4;
+  --white:#ffffff;
+  --gray:#64748b;
+  --light:#F7F9FC;
+  --border:#E2E8F0;
+  --gold:#F59E0B;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Hind',sans-serif;background:var(--white);color:var(--navy);overflow-x:hidden}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:14px 5%;display:flex;justify-content:space-between;align-items:center;background:rgba(255,255,255,0.97);backdrop-filter:blur(16px);border-bottom:2px solid var(--saffron)}
+.logo{font-family:'Baloo 2',sans-serif;font-size:26px;font-weight:800;color:var(--navy);letter-spacing:-0.5px}
+.logo span{color:var(--saffron)}
+.logo em{font-style:normal;color:var(--green);font-size:13px;display:block;font-weight:600;margin-top:-8px;letter-spacing:1px;font-family:'Hind',sans-serif}
+.nav-links{display:flex;gap:28px;list-style:none}
+.nav-links a{font-size:15px;color:var(--navy);text-decoration:none;font-weight:500;transition:color 0.2s}
+.nav-links a:hover{color:var(--saffron)}
+.nav-cta{background:var(--saffron);color:white;padding:10px 22px;border-radius:8px;font-size:14px;font-weight:600;text-decoration:none;transition:all 0.2s;font-family:'Baloo 2',sans-serif}
+.nav-cta:hover{background:var(--navy);transform:translateY(-1px)}
+
+/* HERO */
+.hero{min-height:100vh;background:var(--navy);display:flex;align-items:center;padding:110px 5% 60px;position:relative;overflow:hidden}
+.hero-pattern{position:absolute;inset:0;opacity:0.03;background-image:repeating-linear-gradient(45deg,white 0,white 1px,transparent 0,transparent 50%);background-size:20px 20px}
+.hero-circle1{position:absolute;top:-200px;right:-200px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(255,107,0,0.12) 0%,transparent 70%)}
+.hero-circle2{position:absolute;bottom:-150px;left:-150px;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(19,136,8,0.08) 0%,transparent 70%)}
+.hero-inner{position:relative;z-index:2;max-width:680px}
+.hero-flag{display:flex;align-items:center;gap:10px;margin-bottom:24px}
+.flag-strip{display:flex;height:4px;width:48px;border-radius:2px;overflow:hidden}
+.flag-s{flex:1}
+.flag-s1{background:var(--saffron)}
+.flag-s2{background:white}
+.flag-s3{background:var(--green)}
+.hero-flag span{font-size:13px;font-weight:600;color:rgba(255,255,255,0.5);letter-spacing:1.5px;text-transform:uppercase}
+h1{font-family:'Baloo 2',sans-serif;font-size:clamp(40px,6vw,74px);font-weight:800;color:white;line-height:1.05;margin-bottom:8px}
+h1 .hindi{color:var(--saffron);display:block}
+h1 .sub{font-size:clamp(20px,3vw,32px);color:rgba(255,255,255,0.55);font-weight:500}
+.hero-desc{font-size:17px;color:rgba(255,255,255,0.6);line-height:1.7;margin:20px 0 36px;max-width:520px}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap}
+.btn-saffron{background:var(--saffron);color:white;padding:14px 30px;border-radius:8px;font-size:15px;font-weight:600;text-decoration:none;transition:all 0.2s;font-family:'Baloo 2',sans-serif;display:inline-flex;align-items:center;gap:8px}
+.btn-saffron:hover{background:var(--saffron2);transform:translateY(-2px);box-shadow:0 8px 24px rgba(255,107,0,0.35)}
+.btn-outline{border:1.5px solid rgba(255,255,255,0.25);color:white;padding:14px 30px;border-radius:8px;font-size:15px;font-weight:500;text-decoration:none;transition:all 0.2s;font-family:'Baloo 2',sans-serif}
+.btn-outline:hover{border-color:white;background:rgba(255,255,255,0.06)}
+.hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,0.08);border-radius:12px;overflow:hidden;margin-top:52px}
+.hero-stat{background:rgba(255,255,255,0.04);padding:20px;text-align:center}
+.stat-big{font-family:'Baloo 2',sans-serif;font-size:32px;font-weight:800;color:var(--saffron)}
+.stat-small{font-size:12px;color:rgba(255,255,255,0.4);margin-top:2px}
+
+/* TICKER */
+.ticker{background:var(--saffron);padding:0;overflow:hidden;height:44px;display:flex;align-items:center}
+.ticker-inner{display:flex;animation:tick 25s linear infinite;white-space:nowrap;gap:0}
+.ticker-item{padding:0 32px;font-family:'Baloo 2',sans-serif;font-size:14px;font-weight:700;color:white;display:flex;align-items:center;gap:10px;height:44px}
+.ticker-dot{width:5px;height:5px;border-radius:50%;background:rgba(255,255,255,0.5)}
+@keyframes tick{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+/* TRUST BAR */
+.trust{background:var(--cream);padding:28px 5%;border-bottom:1px solid var(--border)}
+.trust-inner{display:flex;align-items:center;justify-content:center;gap:40px;flex-wrap:wrap}
+.trust-item{display:flex;align-items:center;gap:10px;font-size:14px;color:var(--gray);font-weight:500}
+.trust-icon{font-size:20px}
+.trust-divider{width:1px;height:24px;background:var(--border)}
+
+/* PROBLEM */
+.problem{padding:88px 5%;background:white}
+.section-label{font-family:'Baloo 2',sans-serif;font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--saffron);margin-bottom:12px}
+.section-h{font-family:'Baloo 2',sans-serif;font-size:clamp(26px,4vw,42px);font-weight:800;color:var(--navy);line-height:1.15;margin-bottom:16px}
+.section-p{font-size:17px;color:var(--gray);line-height:1.7;max-width:560px}
+.problem-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;margin-top:56px}
+.prob-list{display:flex;flex-direction:column;gap:16px}
+.prob-item{display:flex;gap:14px;padding:18px 20px;background:var(--cream);border-radius:12px;border-left:3px solid var(--saffron)}
+.prob-emoji{font-size:24px;flex-shrink:0;margin-top:2px}
+.prob-title{font-size:15px;font-weight:600;color:var(--navy);margin-bottom:4px;font-family:'Baloo 2',sans-serif}
+.prob-text{font-size:13px;color:var(--gray);line-height:1.6}
+.solution{background:var(--navy);border-radius:20px;padding:36px;position:relative;overflow:hidden}
+.sol-accent{position:absolute;top:-40px;right:-40px;width:160px;height:160px;border-radius:50%;background:rgba(255,107,0,0.1)}
+.sol-h{font-family:'Baloo 2',sans-serif;font-size:24px;font-weight:800;color:white;margin-bottom:12px}
+.sol-p{font-size:14px;color:rgba(255,255,255,0.55);line-height:1.7;margin-bottom:24px}
+.sol-items{display:flex;flex-direction:column;gap:12px}
+.sol-item{display:flex;align-items:center;gap:12px;font-size:14px;color:rgba(255,255,255,0.8)}
+.sol-check{width:22px;height:22px;border-radius:50%;background:var(--saffron);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:11px;color:white;font-weight:700}
+
+/* WHO */
+.who{padding:88px 5%;background:var(--cream)}
+.who-header{text-align:center;margin-bottom:56px}
+.who-header .section-p{margin:0 auto}
+.who-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.who-card{background:white;border-radius:16px;padding:28px 20px;text-align:center;border:1px solid var(--border);transition:all 0.3s;cursor:default}
+.who-card:hover{border-color:var(--saffron);transform:translateY(-4px);box-shadow:0 12px 32px rgba(13,31,60,0.08)}
+.who-emoji{font-size:40px;margin-bottom:14px}
+.who-title{font-family:'Baloo 2',sans-serif;font-size:16px;font-weight:700;color:var(--navy);margin-bottom:6px}
+.who-text{font-size:13px;color:var(--gray);line-height:1.6}
+
+/* SERVICES */
+.services{padding:88px 5%;background:white}
+.services-header{text-align:center;margin-bottom:56px}
+.services-header .section-p{margin:0 auto}
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.svc-card{border:1.5px solid var(--border);border-radius:16px;padding:28px;transition:all 0.3s}
+.svc-card:hover{border-color:var(--saffron);box-shadow:0 8px 24px rgba(255,107,0,0.08)}
+.svc-card.highlight{background:var(--navy);border-color:var(--navy)}
+.svc-n{font-size:11px;font-weight:700;letter-spacing:1.5px;color:var(--saffron);margin-bottom:14px;font-family:'Baloo 2',sans-serif}
+.svc-icon{font-size:28px;margin-bottom:12px}
+.svc-title{font-family:'Baloo 2',sans-serif;font-size:18px;font-weight:700;color:var(--navy);margin-bottom:8px}
+.svc-card.highlight .svc-title{color:white}
+.svc-text{font-size:13px;color:var(--gray);line-height:1.65}
+.svc-card.highlight .svc-text{color:rgba(255,255,255,0.5)}
+.svc-price{margin-top:16px;font-size:13px;font-weight:700;color:var(--saffron);font-family:'Baloo 2',sans-serif}
+
+/* PRICING */
+.pricing{padding:88px 5%;background:var(--light)}
+.pricing-header{text-align:center;margin-bottom:56px}
+.pricing-header .section-p{margin:0 auto}
+.pkg-wrap{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:960px;margin:0 auto}
+.pkg{background:white;border:1.5px solid var(--border);border-radius:20px;padding:28px;transition:all 0.3s}
+.pkg.star{background:var(--navy);border-color:var(--navy);transform:scale(1.03)}
+.popular-tag{background:var(--saffron);color:white;font-size:11px;font-weight:700;padding:4px 14px;border-radius:20px;letter-spacing:0.5px;display:inline-block;margin-bottom:16px;font-family:'Baloo 2',sans-serif}
+.pkg-name{font-family:'Baloo 2',sans-serif;font-size:20px;font-weight:800;color:var(--navy);margin-bottom:6px}
+.pkg.star .pkg-name{color:white}
+.pkg-hindi{font-size:13px;color:var(--saffron);margin-bottom:16px;font-weight:600}
+.pkg-price{font-family:'Baloo 2',sans-serif;font-size:38px;font-weight:800;color:var(--saffron)}
+.pkg-cycle{font-size:13px;color:var(--gray);margin-bottom:20px}
+.pkg.star .pkg-cycle{color:rgba(255,255,255,0.4)}
+.pkg-features{list-style:none;display:flex;flex-direction:column;gap:10px;margin-bottom:24px}
+.pkg-features li{font-size:14px;color:var(--navy);display:flex;align-items:center;gap:8px}
+.pkg.star .pkg-features li{color:rgba(255,255,255,0.75)}
+.pkg-features li::before{content:'✓';color:var(--green);font-weight:800;font-size:13px;flex-shrink:0}
+.pkg-btn{display:block;text-align:center;padding:12px;border-radius:8px;font-size:14px;font-weight:600;text-decoration:none;transition:all 0.2s;font-family:'Baloo 2',sans-serif}
+.pkg-btn-o{border:1.5px solid var(--border);color:var(--navy)}
+.pkg-btn-o:hover{border-color:var(--saffron);color:var(--saffron)}
+.pkg-btn-f{background:var(--saffron);color:white}
+.pkg-btn-f:hover{background:var(--saffron2)}
+.pkg-note{text-align:center;margin-top:24px;font-size:13px;color:var(--gray)}
+
+/* PROCESS */
+.process{padding:88px 5%;background:white}
+.process-header{text-align:center;margin-bottom:56px}
+.process-header .section-p{margin:0 auto}
+.process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;position:relative}
+.proc-line{position:absolute;top:40px;left:15%;right:15%;height:2px;background:repeating-linear-gradient(90deg,var(--saffron) 0,var(--saffron) 8px,transparent 8px,transparent 20px)}
+.proc{text-align:center;position:relative}
+.proc-circle{width:80px;height:80px;border-radius:50%;background:var(--navy);display:flex;align-items:center;justify-content:center;margin:0 auto 18px;position:relative;z-index:2;border:3px solid white;box-shadow:0 0 0 2px var(--border)}
+.proc-num{font-family:'Baloo 2',sans-serif;font-size:28px;font-weight:800;color:white}
+.proc-title{font-family:'Baloo 2',sans-serif;font-size:16px;font-weight:700;color:var(--navy);margin-bottom:8px}
+.proc-hindi{font-size:12px;color:var(--saffron);font-weight:600;margin-bottom:6px}
+.proc-text{font-size:13px;color:var(--gray);line-height:1.6}
+
+/* TESTIMONIALS */
+.testi{padding:88px 5%;background:var(--navy);position:relative;overflow:hidden}
+.testi-pat{position:absolute;inset:0;opacity:0.025;background-image:repeating-linear-gradient(0deg,white 0,white 1px,transparent 0,transparent 40px),repeating-linear-gradient(90deg,white 0,white 1px,transparent 0,transparent 40px)}
+.testi-header{text-align:center;margin-bottom:56px;position:relative}
+.testi-header .section-label{color:var(--gold)}
+.testi-header .section-h{color:white}
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;position:relative}
+.testi-card{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:16px;padding:24px;transition:all 0.3s}
+.testi-card:hover{background:rgba(255,255,255,0.07);border-color:rgba(255,107,0,0.3)}
+.testi-stars{color:var(--gold);font-size:15px;letter-spacing:2px;margin-bottom:12px}
+.testi-text{font-size:14px;color:rgba(255,255,255,0.7);line-height:1.75;margin-bottom:18px;font-style:italic}
+.testi-author{display:flex;align-items:center;gap:12px}
+.testi-av{width:42px;height:42px;border-radius:50%;background:var(--saffron);display:flex;align-items:center;justify-content:center;font-family:'Baloo 2',sans-serif;font-weight:800;color:white;font-size:16px;flex-shrink:0}
+.testi-name{font-size:14px;font-weight:600;color:white;font-family:'Baloo 2',sans-serif}
+.testi-biz{font-size:12px;color:rgba(255,255,255,0.35)}
+
+/* WHY */
+.why{padding:88px 5%;background:var(--cream)}
+.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.why-text .section-p{max-width:100%;margin-bottom:36px}
+.why-pts{display:flex;flex-direction:column;gap:18px}
+.why-pt{display:flex;gap:14px;align-items:flex-start}
+.why-pt-icon{width:46px;height:46px;border-radius:12px;background:white;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;box-shadow:0 2px 8px rgba(13,31,60,0.08)}
+.why-pt-title{font-family:'Baloo 2',sans-serif;font-size:15px;font-weight:700;color:var(--navy);margin-bottom:3px}
+.why-pt-text{font-size:13px;color:var(--gray);line-height:1.6}
+.why-visual{background:var(--navy);border-radius:20px;padding:32px}
+.why-visual-title{font-family:'Baloo 2',sans-serif;font-size:18px;font-weight:700;color:white;margin-bottom:20px;text-align:center}
+.why-stats{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.why-stat{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.07);border-radius:12px;padding:18px;text-align:center}
+.why-stat-big{font-family:'Baloo 2',sans-serif;font-size:30px;font-weight:800;color:var(--saffron)}
+.why-stat-sm{font-size:12px;color:rgba(255,255,255,0.4);margin-top:3px}
+.why-pitch{background:rgba(255,107,0,0.1);border:1px solid rgba(255,107,0,0.2);border-radius:12px;padding:18px;margin-top:14px;text-align:center}
+.why-pitch p{font-family:'Baloo 2',sans-serif;font-size:15px;font-weight:700;color:var(--saffron);line-height:1.5}
+
+/* CTA */
+.cta{padding:88px 5%;background:var(--saffron);text-align:center;position:relative;overflow:hidden}
+.cta-circle{position:absolute;top:-100px;left:50%;transform:translateX(-50%);width:600px;height:600px;border-radius:50%;background:rgba(255,255,255,0.06)}
+.cta h2{font-family:'Baloo 2',sans-serif;font-size:clamp(30px,5vw,52px);font-weight:800;color:white;margin-bottom:8px;position:relative}
+.cta .hindi-sub{font-size:20px;color:rgba(255,255,255,0.7);font-weight:500;margin-bottom:12px;display:block}
+.cta p{font-size:17px;color:rgba(255,255,255,0.8);margin-bottom:36px;max-width:480px;margin-left:auto;margin-right:auto;position:relative}
+.cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;position:relative}
+.cta-btn-w{background:white;color:var(--saffron);padding:14px 34px;border-radius:8px;font-size:15px;font-weight:700;text-decoration:none;font-family:'Baloo 2',sans-serif;transition:all 0.2s}
+.cta-btn-w:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,0.15)}
+.cta-btn-o{border:2px solid rgba(255,255,255,0.4);color:white;padding:14px 34px;border-radius:8px;font-size:15px;font-weight:600;text-decoration:none;font-family:'Baloo 2',sans-serif;transition:all 0.2s}
+.cta-btn-o:hover{border-color:white;background:rgba(255,255,255,0.1)}
+
+/* CONTACT */
+.contact{padding:88px 5%;background:white}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
+.contact-info .section-p{max-width:100%;margin-bottom:32px}
+.c-items{display:flex;flex-direction:column;gap:18px}
+.c-item{display:flex;align-items:center;gap:14px}
+.c-icon{width:46px;height:46px;border-radius:12px;background:var(--cream);display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
+.c-label{font-size:12px;color:var(--gray);margin-bottom:2px}
+.c-val{font-size:15px;font-weight:600;color:var(--navy);font-family:'Baloo 2',sans-serif}
+.c-form{background:var(--cream);border-radius:20px;padding:32px;border:1px solid var(--border)}
+.c-form-title{font-family:'Baloo 2',sans-serif;font-size:22px;font-weight:800;color:var(--navy);margin-bottom:6px}
+.c-form-sub{font-size:13px;color:var(--gray);margin-bottom:22px}
+.fg{margin-bottom:14px}
+.fg label{display:block;font-size:13px;font-weight:600;color:var(--navy);margin-bottom:5px}
+.fg input,.fg select,.fg textarea{width:100%;padding:11px 14px;border:1.5px solid var(--border);border-radius:8px;font-size:14px;font-family:'Hind',sans-serif;color:var(--navy);background:white;outline:none;transition:border-color 0.2s}
+.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--saffron)}
+.fg textarea{height:90px;resize:vertical}
+.c-submit{width:100%;background:var(--saffron);color:white;border:none;padding:13px;border-radius:8px;font-size:15px;font-weight:700;font-family:'Baloo 2',sans-serif;cursor:pointer;transition:all 0.2s}
+.c-submit:hover{background:var(--navy)}
+
+/* FOOTER */
+footer{background:var(--navy);padding:52px 5% 28px;color:white}
+.footer-top{display:flex;justify-content:space-between;gap:40px;flex-wrap:wrap;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,0.08)}
+.footer-logo{font-family:'Baloo 2',sans-serif;font-size:26px;font-weight:800;margin-bottom:10px}
+.footer-logo span{color:var(--saffron)}
+.footer-tagline{font-size:14px;color:rgba(255,255,255,0.4);max-width:240px;line-height:1.6}
+.footer-links-wrap{display:flex;gap:48px;flex-wrap:wrap}
+.fcol-title{font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-bottom:14px;font-family:'Baloo 2',sans-serif}
+.fcol ul{list-style:none;display:flex;flex-direction:column;gap:9px}
+.fcol ul a{font-size:14px;color:rgba(255,255,255,0.5);text-decoration:none;transition:color 0.2s}
+.fcol ul a:hover{color:white}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:24px;font-size:13px;color:rgba(255,255,255,0.25);flex-wrap:wrap;gap:12px}
+.footer-bottom a{color:var(--saffron);text-decoration:none}
+
+/* WHATSAPP */
+.wa-btn{position:fixed;bottom:24px;right:24px;width:58px;height:58px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:28px;text-decoration:none;box-shadow:0 4px 20px rgba(37,211,102,0.45);z-index:999;transition:transform 0.2s;animation:wa-pulse 3s infinite}
+@keyframes wa-pulse{0%,100%{box-shadow:0 4px 20px rgba(37,211,102,0.45)}50%{box-shadow:0 4px 32px rgba(37,211,102,0.7)}}
+.wa-btn:hover{transform:scale(1.1)}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .nav-links{display:none}
+  .problem-grid,.why-grid,.contact-grid{grid-template-columns:1fr}
+  .who-grid,.svc-grid,.pkg-wrap,.testi-grid{grid-template-columns:1fr}
+  .process-grid{grid-template-columns:1fr 1fr}
+  .proc-line{display:none}
+  .pkg.star{transform:none}
+  .hero-stats{grid-template-columns:1fr}
+  .footer-links-wrap{gap:28px}
+  .trust-divider{display:none}
+}
+
+/* SCROLL ANIMATIONS */
+.reveal{opacity:0;transform:translateY(24px);transition:all 0.65s ease}
+.reveal.show{opacity:1;transform:translateY(0)}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="logo">Online<span>Lao</span><em>Apna Business Online Lao! 🇮🇳</em></div>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#pricing">Pricing</a></li>
+    <li><a href="#process">Process</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta">Free Demo Lao! ↗</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-pattern"></div>
+  <div class="hero-circle1"></div>
+  <div class="hero-circle2"></div>
+  <div class="hero-inner">
+    <div class="hero-flag">
+      <div class="flag-strip"><div class="flag-s flag-s1"></div><div class="flag-s flag-s2"></div><div class="flag-s flag-s3"></div></div>
+      <span>Made in Noida, Made for India</span>
+    </div>
+    <h1>
+      <span class="hindi">Apna Business<br>Online Lao!</span>
+      <span class="sub">Professional websites<br>for local businesses</span>
+    </h1>
+    <p class="hero-desc">Noida aur Delhi NCR ke restaurants, clinics, coaching centres, aur shops ke liye professional website — sirf ₹2,999 mein. Google pe nazar aao, customers badhao!</p>
+    <div class="hero-btns">
+      <a href="#contact" class="btn-saffron">Free Demo Lao ↗</a>
+      <a href="#pricing" class="btn-outline">Pricing Dekho</a>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="stat-big">50+</div><div class="stat-small">Websites Delivered</div></div>
+      <div class="hero-stat"><div class="stat-big">3-5</div><div class="stat-small">Din mein Taiyaar</div></div>
+      <div class="hero-stat"><div class="stat-big">₹499</div><div class="stat-small">Se Shuru Monthly</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker">
+  <div class="ticker-inner">
+    <div class="ticker-item"><span class="ticker-dot"></span>Restaurant</div>
+    <div class="ticker-item"><span class="ticker-dot"></span>Coaching Centre</div>
+    <div class="ticker-item"><span class="ticker-dot"></span>Doctor & Clinic</div>
+    <div class="ticker-item"><span class="ticker-dot"></span>Salon & Spa</div>
+    <div class="ticker-item"><span class="ticker-dot"></span>CA & Lawyer</div>
+    <div class="ticker-item"><span class="ticker-dot"></span>Real Estate</div>
+    <div class="ticker-item"><span class="ticker-dot"></span>Gym & Fitness</div>
+    <div class="ticker-item"><span class="ticker-dot"></span>Kirana Store</div>
+    <div class="ticker-item"><span class="ticker-dot"></span>Hospital</div>
+    <div class="ticker-item"><span class="ticker-dot"></span>Travel Agency</div>
+    <div class="ticker-item"><span class="ticker-dot"></span>Restaurant</div>
+    <div class="ticker-item"><span class="ticker-dot"></span>Coaching Centre</div>
+    <div class="ticker-item"><span class="ticker-dot"></span>Doctor & Clinic</div>
+    <div class="ticker-item"><span class="ticker-dot"></span>Salon & Spa</div>
+    <div class="ticker-item"><span class="ticker-dot"></span>CA & Lawyer</div>
+    <div class="ticker-item"><span class="ticker-dot"></span>Real Estate</div>
+    <div class="ticker-item"><span class="ticker-dot"></span>Gym & Fitness</div>
+    <div class="ticker-item"><span class="ticker-dot"></span>Kirana Store</div>
+    <div class="ticker-item"><span class="ticker-dot"></span>Hospital</div>
+    <div class="ticker-item"><span class="ticker-dot"></span>Travel Agency</div>
+  </div>
+</div>
+
+<!-- TRUST BAR -->
+<div class="trust">
+  <div class="trust-inner">
+    <div class="trust-item"><span class="trust-icon">🔒</span>SSL Certificate Free</div>
+    <div class="trust-divider"></div>
+    <div class="trust-item"><span class="trust-icon">📍</span>Google Maps Setup Free</div>
+    <div class="trust-divider"></div>
+    <div class="trust-item"><span class="trust-icon">📱</span>Mobile Friendly Guaranteed</div>
+    <div class="trust-divider"></div>
+    <div class="trust-item"><span class="trust-icon">💬</span>WhatsApp Support 7 Days</div>
+    <div class="trust-divider"></div>
+    <div class="trust-item"><span class="trust-icon">⚡</span>3-5 Din Mein Delivery</div>
+  </div>
+</div>
+
+<!-- PROBLEM -->
+<section class="problem reveal" id="about">
+  <div class="section-label">Yeh Problem Hai?</div>
+  <div class="section-h">Kya Aapka Business<br>Google Pe Nahi Milta?</div>
+  <div class="section-p">Roz hazaron customers Noida mein aapki service Google pe dhundhte hain. Website nahi hai toh competitor ko milte hain — aapko nahi.</div>
+  <div class="problem-grid">
+    <div class="prob-list">
+      <div class="prob-item">
+        <div class="prob-emoji">😔</div>
+        <div>
+          <div class="prob-title">Website Nahi = Trust Nahi</div>
+          <div class="prob-text">82% customers online check karte hain pehle. Website nahi hai toh woh competitor ke paas chale jaate hain.</div>
+        </div>
+      </div>
+      <div class="prob-item">
+        <div class="prob-emoji">📍</div>
+        <div>
+          <div class="prob-title">Google Maps Pe Nahi Hain</div>
+          <div class="prob-text">"Restaurant near me" ya "doctor near me" search karte hain customers roz. Kya aap show ho rahe ho?</div>
+        </div>
+      </div>
+      <div class="prob-item">
+        <div class="prob-emoji">😤</div>
+        <div>
+          <div class="prob-title">Developer Bahut Mahangi Charge Karte Hain</div>
+          <div class="prob-text">Bade agencies ₹50,000+ lete hain ek simple website ke liye — aur baad mein gayab ho jaate hain.</div>
+        </div>
+      </div>
+      <div class="prob-item">
+        <div class="prob-emoji">📉</div>
+        <div>
+          <div class="prob-title">Competitor Aage Nikal Raha Hai</div>
+          <div class="prob-text">Aapka competitor website se naye customers le raha hai jo actually aapke hone chahiye the.</div>
+        </div>
+      </div>
+    </div>
+    <div class="solution">
+      <div class="sol-accent"></div>
+      <div class="sol-h">OnlineLao Yeh Sab Solve Karta Hai!</div>
+      <div class="sol-p">Hum Noida ke local businesses ke liye affordable, professional websites banate hain — aur baad mein bhi saath rehte hain. Ek baar payment, lifetime support.</div>
+      <div class="sol-items">
+        <div class="sol-item"><div class="sol-check">✓</div>3-5 din mein website taiyaar</div>
+        <div class="sol-item"><div class="sol-check">✓</div>Google Maps setup bilkul free</div>
+        <div class="sol-item"><div class="sol-check">✓</div>Mobile pe bilkul sahi dikhega</div>
+        <div class="sol-item"><div class="sol-check">✓</div>WhatsApp pe support milega</div>
+        <div class="sol-item"><div class="sol-check">✓</div>Sirf ₹2,999 se shuru</div>
+        <div class="sol-item"><div class="sol-check">✓</div>Local team — milke baat karo</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHO WE SERVE -->
+<section class="who reveal" id="who">
+  <div class="who-header">
+    <div class="section-label">Kiske Liye Hai</div>
+    <div class="section-h">Har Local Business Ke Liye</div>
+    <div class="section-p">Restaurant se lekar doctor tak, coaching se lekar salon tak — sabke liye website banate hain hum.</div>
+  </div>
+  <div class="who-grid">
+    <div class="who-card"><div class="who-emoji">🍽️</div><div class="who-title">Restaurant & Dhaba</div><div class="who-text">Menu, photos, location, delivery enquiry — sab ek jagah</div></div>
+    <div class="who-card"><div class="who-emoji">🏫</div><div class="who-title">Coaching Centre</div><div class="who-text">Courses, fees, results, admission form — students dhundh paayenge</div></div>
+    <div class="who-card"><div class="who-emoji">🏥</div><div class="who-title">Doctor & Clinic</div><div class="who-text">Appointment booking, services, timings — patients find karein</div></div>
+    <div class="who-card"><div class="who-emoji">💇</div><div class="who-title">Salon & Spa</div><div class="who-text">Services, pricing, gallery, booking — dikhao apna kaam</div></div>
+    <div class="who-card"><div class="who-emoji">📊</div><div class="who-title">CA & Lawyer</div><div class="who-text">Professional image, services, contact — clients trust karein</div></div>
+    <div class="who-card"><div class="who-emoji">🏠</div><div class="who-title">Real Estate</div><div class="who-text">Property listings, enquiry form, gallery — leads badhao</div></div>
+    <div class="who-card"><div class="who-emoji">💪</div><div class="who-title">Gym & Fitness</div><div class="who-text">Membership plans, trainers, schedule — members badhaao</div></div>
+    <div class="who-card"><div class="who-emoji">🛒</div><div class="who-title">Retail & Shop</div><div class="who-text">Products, offers, location, WhatsApp — dukan online lao</div></div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services reveal" id="services">
+  <div class="services-header">
+    <div class="section-label">Kya Karte Hain Hum</div>
+    <div class="section-h">Ek Jagah, Poora Digital Solution</div>
+    <div class="section-p">Website se lekar Google setup tak — poora digital solution ek hi jagah.</div>
+  </div>
+  <div class="svc-grid">
+    <div class="svc-card"><div class="svc-n">01</div><div class="svc-icon">🌐</div><div class="svc-title">Business Website</div><div class="svc-text">Professional, mobile-friendly website jo aapke business ki puri kahani bataye. Fast, clean, aur Google-ready.</div><div class="svc-price">From ₹2,999</div></div>
+    <div class="svc-card highlight"><div class="svc-n">02</div><div class="svc-icon">📍</div><div class="svc-title" style="color:white">Google Business Setup</div><div class="svc-text">Google Maps, Google Search, Google Reviews — customers aapko dhundh paayenge, call kar paayenge.</div><div class="svc-price">FREE Har Package Mein</div></div>
+    <div class="svc-card"><div class="svc-n">03</div><div class="svc-icon">🔍</div><div class="svc-title">Local SEO</div><div class="svc-text">Jab koi aapki service apne area mein search kare — aap pehle nazar aao. Zyada visibility, zyada customers.</div><div class="svc-price">From ₹999/month</div></div>
+    <div class="svc-card"><div class="svc-n">04</div><div class="svc-icon">💬</div><div class="svc-title">WhatsApp Integration</div><div class="svc-text">Click-to-chat button, automatic greeting, enquiry form — seedha WhatsApp pe customers aayein.</div><div class="svc-price">From ₹500</div></div>
+    <div class="svc-card"><div class="svc-n">05</div><div class="svc-icon">🛒</div><div class="svc-title">Online Store</div><div class="svc-text">Products online becho — catalogue, cart, UPI payment, orders — sab kuch ready.</div><div class="svc-price">From ₹9,999</div></div>
+    <div class="svc-card"><div class="svc-n">06</div><div class="svc-icon">🔧</div><div class="svc-title">Monthly Support</div><div class="svc-text">Updates, photos change, content edit, security — hum har mahine dekhte hain aapki website ko.</div><div class="svc-price">From ₹499/month</div></div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing reveal" id="pricing">
+  <div class="pricing-header">
+    <div class="section-label">Kitna Lagega</div>
+    <div class="section-h">Simple Pricing, Koi Chhupa Hua Charge Nahi</div>
+    <div class="section-p">Ek baar setup fee + chhota sa monthly amount. Jab chahein band kar do.</div>
+  </div>
+  <div class="pkg-wrap">
+    <div class="pkg">
+      <div class="pkg-name">Basic</div>
+      <div class="pkg-hindi">Shuruwat Ke Liye Best</div>
+      <div class="pkg-price">₹2,999</div>
+      <div class="pkg-cycle">ek baar + ₹499/month</div>
+      <ul class="pkg-features">
+        <li>3 page website</li>
+        <li>Mobile friendly</li>
+        <li>Contact form</li>
+        <li>Google Maps embed</li>
+        <li>WhatsApp button</li>
+        <li>Google Business setup</li>
+        <li>3 din mein ready</li>
+      </ul>
+      <a href="#contact" class="pkg-btn pkg-btn-o">Shuru Karo</a>
+    </div>
+    <div class="pkg star">
+      <div class="popular-tag">SABSE POPULAR ⭐</div>
+      <div class="pkg-name">Standard</div>
+      <div class="pkg-hindi">Zyaadatar Businesses Ke Liye</div>
+      <div class="pkg-price">₹5,999</div>
+      <div class="pkg-cycle">ek baar + ₹799/month</div>
+      <ul class="pkg-features">
+        <li>5 page website</li>
+        <li>Photo gallery</li>
+        <li>Basic SEO included</li>
+        <li>Social media links</li>
+        <li>2 changes/month</li>
+        <li>Google Business setup</li>
+        <li>Priority WhatsApp support</li>
+      </ul>
+      <a href="#contact" class="pkg-btn pkg-btn-f">Shuru Karo</a>
+    </div>
+    <div class="pkg">
+      <div class="pkg-name">Premium</div>
+      <div class="pkg-hindi">Serious Business Ke Liye</div>
+      <div class="pkg-price">₹9,999</div>
+      <div class="pkg-cycle">ek baar + ₹1,299/month</div>
+      <ul class="pkg-features">
+        <li>8 page website</li>
+        <li>Booking/enquiry form</li>
+        <li>Full SEO package</li>
+        <li>WhatsApp automation</li>
+        <li>Unlimited changes</li>
+        <li>Google Ads setup</li>
+        <li>Dedicated manager</li>
+      </ul>
+      <a href="#contact" class="pkg-btn pkg-btn-o">Shuru Karo</a>
+    </div>
+  </div>
+  <div class="pkg-note">Sabhi packages mein free domain setup, SSL certificate, aur Google Business Profile. 50% advance zaroori hai. Baaki website deliver hone par.</div>
+</section>
+
+<!-- PROCESS -->
+<section class="process reveal" id="process">
+  <div class="process-header">
+    <div class="section-label">Kaise Kaam Karta Hai</div>
+    <div class="section-h">3-5 Din Mein Website Live!</div>
+    <div class="section-p">Simple, fast, aur tension-free. Aap apna business dekho — baaki sab hum sambhaalte hain.</div>
+  </div>
+  <div class="process-grid">
+    <div class="proc-line"></div>
+    <div class="proc"><div class="proc-circle"><div class="proc-num">1</div></div><div class="proc-title">Free Baat Karo</div><div class="proc-hindi">Consultation</div><div class="proc-text">Call ya WhatsApp karo. Hum samjhenge aapka business aur sahi package suggest karenge.</div></div>
+    <div class="proc"><div class="proc-circle"><div class="proc-num">2</div></div><div class="proc-title">Content Bhejo</div><div class="proc-hindi">Photos & Details</div><div class="proc-text">WhatsApp pe photos, services, aur contact details bhejo. Baaki sab text hum likhte hain.</div></div>
+    <div class="proc"><div class="proc-circle"><div class="proc-num">3</div></div><div class="proc-title">Hum Banate Hain</div><div class="proc-hindi">We Build It</div><div class="proc-text">2-3 din mein website ready. Preview link milega — aap dekho aur approve karo.</div></div>
+    <div class="proc"><div class="proc-circle"><div class="proc-num">4</div></div><div class="proc-title">Live Ho Jao!</div><div class="proc-hindi">Go Live!</div><div class="proc-text">Website live! Google Business setup. Ab naye customers khud dhundh ke aayenge!</div></div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testi" id="reviews">
+  <div class="testi-pat"></div>
+  <div class="testi-header">
+    <div class="section-label">Hamare Customers Bolte Hain</div>
+    <div class="section-h" style="color:white">Real Business.<br>Real Results. 🙏</div>
+  </div>
+  <div class="testi-grid">
+    <div class="testi-card"><div class="testi-stars">★★★★★</div><div class="testi-text">"OnlineLao ne hamare restaurant ki website sirf 3 din mein bana di. Ab har hafte 15-20 enquiries aati hain website se. Bahut accha kaam kiya Prabhash ji ne!"</div><div class="testi-author"><div class="testi-av">R</div><div><div class="testi-name">Rajesh Sharma</div><div class="testi-biz">Sharma's Restaurant, Sector 18 Noida</div></div></div></div>
+    <div class="testi-card"><div class="testi-stars">★★★★★</div><div class="testi-text">"Hamare coaching centre ki admissions 40% badh gayi website ke baad. Students seedha Google se dhundh ke aate hain ab. Price bhi bahut reasonable tha!"</div><div class="testi-author"><div class="testi-av">S</div><div><div class="testi-name">Sunita Verma</div><div class="testi-biz">Excel Coaching Centre, Vaishali</div></div></div></div>
+    <div class="testi-card"><div class="testi-stars">★★★★★</div><div class="testi-text">"Professional website bani, Google Maps pe bhi aa gaye. Ab patients khud phone karke appointment lete hain. Bahut acha service hai — always available on WhatsApp!"</div><div class="testi-author"><div class="testi-av">D</div><div><div class="testi-name">Dr. Deepak Gupta</div><div class="testi-biz">Gupta Clinic, Noida Extension</div></div></div></div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="why reveal">
+  <div class="why-grid">
+    <div class="why-text">
+      <div class="section-label">Kyun OnlineLao</div>
+      <div class="section-h">Hum Bhi Noida Waale Hain!</div>
+      <div class="section-p">Hum local hain, aap local hain — isliye hum aapki zaroorate samajhte hain. Hindi mein baat karo, WhatsApp pe milte hain, seedha ghar tak aate hain.</div>
+      <div class="why-pts">
+        <div class="why-pt"><div class="why-pt-icon">🤝</div><div><div class="why-pt-title">Local & Personal</div><div class="why-pt-text">Noida mein hain hum. Milke baat kar sakte ho. Koi bada agency nahi — real local team.</div></div></div>
+        <div class="why-pt"><div class="why-pt-icon">⚡</div><div><div class="why-pt-title">Fast Delivery</div><div class="why-pt-text">3-5 din mein website ready. Weeks ya months nahi lagenge jaise doosri agencies mein.</div></div></div>
+        <div class="why-pt"><div class="why-pt-icon">📞</div><div><div class="why-pt-title">Hamesha Available</div><div class="why-pt-text">WhatsApp support included. Payment ke baad gayab nahi hote hum — yahi sabse bada fark hai.</div></div></div>
+        <div class="why-pt"><div class="why-pt-icon">💰</div><div><div class="why-pt-title">Honest Pricing</div><div class="why-pt-text">Jo quote kiya, wahi dena hai. Koi hidden charge nahi. Koi surprise bill nahi. Promise.</div></div></div>
+      </div>
+    </div>
+    <div class="why-visual">
+      <div class="why-visual-title">OnlineLao in Numbers</div>
+      <div class="why-stats">
+        <div class="why-stat"><div class="why-stat-big">50+</div><div class="why-stat-sm">Websites Delivered</div></div>
+        <div class="why-stat"><div class="why-stat-big">4hr</div><div class="why-stat-sm">Average Build Time</div></div>
+        <div class="why-stat"><div class="why-stat-big">100%</div><div class="why-stat-sm">Satisfied Clients</div></div>
+        <div class="why-stat"><div class="why-stat-big">₹499</div><div class="why-stat-sm">Starting Monthly</div></div>
+      </div>
+      <div class="why-pitch"><p>"Aapki dukan toh hai —<br>ab digital dukan bhi banao!" 🚀</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="cta-circle"></div>
+  <h2>Ready Ho? Online Lao!</h2>
+  <span class="hindi-sub">Aaj hi pehla kadam uthao — bilkul free mein demo dekho</span>
+  <p>Koi payment nahi pehle. Pehle apni business ki website dekho — phir decide karo.</p>
+  <div class="cta-btns">
+    <a href="#contact" class="cta-btn-w">Free Demo Maango</a>
+    <a href="https://wa.me/919711113013" class="cta-btn-o">💬 WhatsApp Karo Abhi</a>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact reveal" id="contact">
+  <div class="contact-grid">
+    <div class="contact-info">
+      <div class="section-label">Baat Karo</div>
+      <div class="section-h">Chalo Shuru Karte Hain!</div>
+      <div class="section-p">Form bharo ya seedha WhatsApp karo. 2 ghante mein reply milega aur 24 ghante mein free demo taiyaar.</div>
+      <div class="c-items">
+        <div class="c-item"><div class="c-icon">📞</div><div><div class="c-label">Call / WhatsApp</div><div class="c-val">+91 97111 13013</div></div></div>
+        <div class="c-item"><div class="c-icon">✉️</div><div><div class="c-label">Email</div><div class="c-val">prabhash29@gmail.com</div></div></div>
+        <div class="c-item"><div class="c-icon">📍</div><div><div class="c-label">Location</div><div class="c-val">Noida, UP (Poora Delhi NCR serve karte hain)</div></div></div>
+        <div class="c-item"><div class="c-icon">⏰</div><div><div class="c-label">Working Hours</div><div class="c-val">Monday – Saturday, 9 AM – 8 PM</div></div></div>
+      </div>
+    </div>
+    <div class="c-form">
+      <div class="c-form-title">Free Demo Maango</div>
+      <div class="c-form-sub">Bilkul free — koi commitment nahi. Pehle dekho, phir socho.</div>
+      <div class="fg"><label>Aapka Naam</label><input type="text" placeholder="Ramesh Kumar"></div>
+      <div class="fg"><label>WhatsApp Number</label><input type="tel" placeholder="+91 98765 43210"></div>
+      <div class="fg"><label>Business Type</label>
+        <select>
+          <option value="">Apna business chunno</option>
+          <option>Restaurant / Dhaba</option>
+          <option>Coaching Institute</option>
+          <option>Doctor / Clinic</option>
+          <option>Salon / Beauty Parlour</option>
+          <option>CA / Lawyer</option>
+          <option>Real Estate</option>
+          <option>Gym / Fitness</option>
+          <option>Retail Shop / Kirana</option>
+          <option>Kuch Aur</option>
+        </select>
+      </div>
+      <div class="fg"><label>Kuch Batana Hai? (Optional)</label><textarea placeholder="Apne business ke baare mein batao..."></textarea></div>
+      <button class="c-submit" onclick="alert('Shukriya! Hum 2 ghante mein WhatsApp karenge aur aapka free demo bhejenge. 🙏')">Free Demo Maango — Bilkul Free Hai! ↗</button>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div>
+      <div class="footer-logo">Online<span>Lao</span></div>
+      <div class="footer-tagline">Noida ka apna digital partner — local businesses ke liye professional websites, honest price, real support. 🇮🇳</div>
+    </div>
+    <div class="footer-links-wrap">
+      <div class="fcol">
+        <div class="fcol-title">Services</div>
+        <ul>
+          <li><a href="#services">Business Website</a></li>
+          <li><a href="#services">Google Business</a></li>
+          <li><a href="#services">Local SEO</a></li>
+          <li><a href="#services">Online Store</a></li>
+          <li><a href="#services">Monthly Support</a></li>
+        </ul>
+      </div>
+      <div class="fcol">
+        <div class="fcol-title">Company</div>
+        <ul>
+          <li><a href="#about">Hamare Baare Mein</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#process">Kaise Kaam Karta Hai</a></li>
+          <li><a href="#reviews">Customer Reviews</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="fcol">
+        <div class="fcol-title">Contact</div>
+        <ul>
+          <li><a href="tel:+919711113013">+91 97111 13013</a></li>
+          <li><a href="https://wa.me/919711113013">WhatsApp Karo</a></li>
+          <li><a href="mailto:prabhash29@gmail.com">Email Karo</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div>© 2025 OnlineLao. Noida, Uttar Pradesh. All rights reserved.</div>
+    <div>Made with ❤️ in Noida | <a href="#home">Upar Jao ↑</a></div>
+  </div>
+</footer>
+
+<!-- WHATSAPP -->
+<a href="https://wa.me/919711113013" class="wa-btn" title="WhatsApp karo">💬</a>
+
+<script>
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click',e=>{
+    e.preventDefault();
+    document.querySelectorAll('.reveal').forEach(el=>el.classList.add('show'));
+    const t=document.querySelector(a.getAttribute('href'));
+    if(t) t.scrollIntoView({behavior:'smooth',block:'start'});
+  });
+});
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')});
+},{threshold:0.08});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+window.addEventListener('scroll',()=>{
+  document.querySelector('nav').style.boxShadow=window.scrollY>50?'0 2px 16px rgba(13,31,60,0.1)':'none';
+});
+</script>
+</body>
+</html>
